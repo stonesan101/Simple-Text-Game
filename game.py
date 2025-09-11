@@ -1,10 +1,11 @@
-
-
-def easyEnding(ending,level,strength):
-    print(f"You choose the easy way out.\n{ending}\nEnding Level: {level}\nEnding Strength: {strength}\nGame Over")
+def retry():
     choice = input("Try Again? y/n")
     if choice == "y":
         intro(1,1)
+
+def easyEnding(ending,level,strength):
+    print(f"You choose the easy way out.\n{ending}\nEnding Level: {level}\nEnding Strength: {strength}\nGame Over")
+    retry()
 
 def invalid(fun,level,strength):
     print("Invalid entry\n")
@@ -43,12 +44,13 @@ def thirdChoice(level,strength):
         invalid(thirdChoice,level,strength)
 
 def fourthChoice(level,strength):
-    print("\nYou reach the end of the tunnel and find another chest.\nJust as you touch the chest you're startled by a loud thud behind you!\nYou Turn around to find the skeleton knight 'Mr Boney Pants Guy'\nWith your exit blocked you have no choice but to fight!\nIt's a downhill battle, you're exhausted and about to faint\nYou manage to get behind the enemy, finally you have a way out")
+    print("\nYou reach the end of the tunnel and find another chest.\nJust as you touch the chest you're startled by a loud thud behind you!\nYou Turn around to find the skeleton knight 'Mr Boney Pants Guy'\nWith your exit blocked you have no choice but to fight!\nIt's a downhill battle, you're exhausted and about to faint\nYou manage to get behind the enemy, finally you have a way out\n")
     choice = input('Do you flee or fight?')
     if choice == 'flee':
         easyEnding("You barely manage to escape, you lie on the grass out of breath",level,strength)
     elif choice == 'fight':
-        print("\nCRITICAL HIT!\nMr Boney Pants Guy's bones crumble to the ground\nLevel +1\nStrength +10\nEnding Level: {level+2}\nEnding Strength: {strength+10}\nThanks for playing!")
+        print("\nCRITICAL HIT!\nMr Boney Pants Guy's bones crumble to the ground\nLevel +1\nStrength +10\nEnding Level: {level+2}\nEnding Strength: {strength+10}\nThanks for playing!\n")
+        retry()
     else:
         invalid(fourthChoice,level,strength)
 
