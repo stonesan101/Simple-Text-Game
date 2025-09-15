@@ -2,6 +2,8 @@ def retry():
     choice = input("Try Again? y/n")
     if choice == "y":
         intro(1, 1)
+    else:
+        print("Thank you for playing")
 
 
 def easyEnding(ending, level, strength):
@@ -59,7 +61,7 @@ def fourthChoice(level, strength):
         easyEnding("You barely manage to escape, you lie on the grass out of breath", level, strength)
     elif choice == 'fight':
         print(
-            "\nCRITICAL HIT!\nMr Boney Pants Guy's bones crumble to the ground\nLevel +1\nStrength +10\nEnding Level: {level+2}\nEnding Strength: {strength+10}\nThanks for playing!\n")
+            f"\nCRITICAL HIT!\nMr Boney Pants Guy's bones crumble to the ground\nLevel +1\nStrength +10\nEnding Level: {level+2}\nEnding Strength: {strength+10}\nThanks for playing!\n")
         retry()
     else:
         invalid(fourthChoice, level, strength)
