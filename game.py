@@ -11,32 +11,37 @@ def easyEnding(ending, level, strength):
     retry()
 
 
+# 3c
 def whileLoop(inputText, endingText, continueInput, endingInput, nextFun, level, strength):
+    # 2b
     while (True):
         choice = input(inputText).lower()
         if choice == continueInput:
             nextFun(level, strength)
+            # 2c
             break
         if choice == endingInput:
             easyEnding(endingText, level, strength)
             break
         else:
             print(f"\nInvalid Input\nPlease choose {continueInput} or {endingInput}\n")
+            # 2d
+            continue
 
 
-def invalid(fun, level, strength):
-    print("\nInvalid entry")
-    fun(level, strength)
-
-
-def intro(level, strength):
+# 3f
+def intro(level=1, strength=1):
     print(
         f"You stand in a field.\n To the west you see a path sunny and bright.\n To the east an omnibus dark tunnel.\n")
-    inputText = 'Do you go east or west: '
-    endingText = "You go for a stroll in the woods and return home."
-    continueInput = 'east'
-    endingInput = 'west'
-    whileLoop(inputText, endingText, continueInput, endingInput, secondChoice, level, strength)
+    choice = input('Do you go east or west:')
+    if choice == 'west':
+        easyEnding("You go for a stroll in the woods and return home.", level, strength)
+    elif choice == 'east':
+        secondChoice(level, strength)
+    else:
+        print("\nInvalid entry")
+        # 4b
+        intro()
 
 
 def secondChoice(level, strength):
@@ -70,6 +75,7 @@ def fourthChoice(level, strength):
     whileLoop(inputText, endingText, continueInput, endingInput, finalEnding, level, strength)
 
 
+# 3a
 def finalEnding():
     choice = input("Try Again? y/n: ")
     if choice.lower() == "y":
@@ -78,4 +84,17 @@ def finalEnding():
         print("\nThank you for playing!")
 
 
-intro(1, 1)
+for i in range(5):
+    # 2e
+    for j in range(25):
+        print("*", end=" ")
+    print()
+
+intro()
+
+# 2a
+for i in range(5):
+    # 2e
+    for j in range(25):
+        print("*", end=" ")
+    print()
