@@ -71,30 +71,29 @@ def fourthChoice(level, strength):
     endingInput = 'flee'
     whileLoop(inputText, endingText, continueInput, endingInput, finalEnding, level, strength)
 
+def finalEnding(level, strength):
+    print(
+        "\nCRITICAL HIT!\nMr Boney Pants Guy's bones crumble to the ground\nLevel +1\nStrength +10\nEnding Level: {level+2}\nEnding Strength: {strength+10}\nThanks for playing!")
 
-# 3a
-def finalEnding():
     choice = input("Try Again? y/n: ")
     if choice.lower() == "y":
         intro()
     else:
         print("\nThank you for playing!")
 
-
-for i in range(5):
-    # 2e
-    for j in range(25):
+# 3a
+def printStars():
+    #2a
+    for i in range(5):
+     # 2e
+      for j in range(25):
         print("*", end=" ")
     print()
 
+printStars()
 intro()
 
-# 2a
-for i in range(5):
-    # 2e
-    for j in range(25):
-        print("*", end=" ")
-    print()
+
 
 
 def recursiveLoop(inputText, endingText, continueInput, endingInput, nextFun, level, strength):
